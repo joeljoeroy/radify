@@ -12,6 +12,7 @@ class ToDoItem extends React.Component {
         const styleInput ={
             fontSize: '16px',
             fontFamily: 'Roboto',
+            // minWidth: '50px',
             paddingLeft: '20px',
             border: "none transparent",
             outline: "none",
@@ -30,7 +31,7 @@ class ToDoItem extends React.Component {
                 onClick={() => {this.props.handleChange(this.props.value.id)}} 
                 />
 
-            <input style={styleInput} type='text' size='35' value={this.props.value.task}  />
+            <input style={styleInput} type='text' size='35'  value={this.props.value.task}  />
 
             <MdDelete style={{height: '18px', width: '18px',paddingLeft: '20px'}}
                     onClick={() => {this.props.handleDelete(this.props.value.id)}}
