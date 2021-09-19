@@ -87,7 +87,7 @@ class ToDo extends Component {
                 <input      type='text' 
                             className='title'
                             value = {this.state.Title} 
-                            placeholder = 'Enter a Title'
+                            placeholder = 'Title'
                             onChange = {(e) => { this.newItem('Title', e.target.value) }}
                             onKeyUp ={(event)=> {event.key === 'Enter' && this.setState({ Title : this.state.Title.slice()})}} 
                             />
@@ -98,7 +98,7 @@ class ToDo extends Component {
                     <input  type='text' 
                             className='add-task'
                             value = {this.state.newItem} 
-                            placeholder = 'New Item'
+                            placeholder = 'Task name'
                             onChange = {(e) => { this.newItem('newItem', e.target.value) }}
                             onKeyUp ={(event)=> {event.key === 'Enter' && this.handleNew(this.state.tasks.length)}} />
                             
