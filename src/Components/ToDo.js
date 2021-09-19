@@ -80,7 +80,8 @@ class ToDo extends Component {
         const completed = this.state.tasks.filter((res) => res.completed).map(content => <Item key={content.id} value={content} handleChange={this.handleChange} handleDelete={this.handleDelete} />);
 
         return (
-
+            <>
+            
             <div className='note-body'>
 
                 <input      type='text' 
@@ -116,6 +117,7 @@ class ToDo extends Component {
                 </div>
 
             </div>
+            </>
         );
     }
     
