@@ -12,7 +12,7 @@ class ToDoItem extends React.Component {
         const styleInput ={
             fontSize: '16px',
             fontFamily: 'Roboto',
-            // minWidth: '50px',
+
             paddingLeft: '20px',
             border: "none transparent",
             outline: "none",
