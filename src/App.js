@@ -2,15 +2,20 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import View from "./Components/View";
 import ToDo from "./Components/ToDo";
+import Paginate from './Components/Paginate'
 
 export default function App() {
   return (
     <Router>
-      <ToDo />
       <button>
         <Link to="/view">view All</Link>
       </button>
+      <Route path='/' component={ToDo} exact />
+      <Route path='/view' component={Paginate} />
     </Router>
+
+    
+
   );
 }
 
