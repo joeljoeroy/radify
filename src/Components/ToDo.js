@@ -103,7 +103,7 @@ class ToDo extends Component {
                             />
                 <div className='container-add'> 
 
-                    <img src={addLogo} alt='none' className='add-logo' onClick={() => { this.handleNew(); toast.success('Task Added', { autoClose: 2000, position: toast.POSITION.BOTTOM_CENTER}); }} />
+                    <img src={addLogo} alt='none' className='add-logo' onClick={() => { this.handleNew();  }} />
 
                     <input  type='text' 
                             className='add-task'
