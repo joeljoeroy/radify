@@ -6,8 +6,11 @@ import Item from './ToDoItem'
 import Divider from '@mui/material/Divider';
 import addLogo from '../res/add18.png'
 
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
+toast.configure();
 class ToDo extends Component {
 
     constructor(){
@@ -22,6 +25,7 @@ class ToDo extends Component {
         this.handleNew = this.handleNew.bind(this);
         this.newItem = this.newItem.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        // this.handleEnter = this.handleEnter.bind(this)
     }
 
 
@@ -47,7 +51,10 @@ class ToDo extends Component {
                 newItem: ''
                 });
         }
+    toast.success('Task Added', { autoClose: 2000, position: toast.POSITION.BOTTOM_CENTER});
+
     }
+    
 
     handleChange(id){
 
@@ -60,6 +67,7 @@ class ToDo extends Component {
             });
             return newTasks;
         })
+        
     }
 
     handleDelete(id){
@@ -68,6 +76,8 @@ class ToDo extends Component {
        this.setState({
            tasks: newTasks
        });
+    toast.warning('Task Removed', { autoClose: 2000, position: toast.POSITION.BOTTOM_CENTER});
+
 
     }
 
@@ -93,14 +103,14 @@ class ToDo extends Component {
                             />
                 <div className='container-add'> 
 
-                    <img src={addLogo} alt='none' className='add-logo' onClick={() => this.handleNew()} />
+                    <img src={addLogo} alt='none' className='add-logo' onClick={() => { this.handleNew(); toast.success('Task Added', { autoClose: 2000, position: toast.POSITION.BOTTOM_CENTER}); }} />
 
                     <input  type='text' 
                             className='add-task'
                             value = {this.state.newItem} 
                             placeholder = 'task add'
                             onChange = {(e) => { this.newItem('newItem', e.target.value) }}
-                            onKeyUp ={(event)=> {event.key === 'Enter' && this.handleNew(this.state.tasks.length)}} />
+                            onKeyUp ={(event)=> { event.key === 'Enter' &&  this.handleNew(this.state.tasks.length) }} />
                             
                 </div>
                 <Divider width='450px'/>
