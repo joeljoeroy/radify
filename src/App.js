@@ -1,26 +1,32 @@
-// import React from 'react'
-// import Data from './data'
-// import ToDo from './Components/ToDo.js'
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import View from "./Components/View";
+import ToDo from "./Components/ToDo";
 
-// class App extends React.Component {
+export default function App() {
+  return (
+    <Router>
+      <ToDo />
+      <button>
+        <Link to="/view">view All</Link>
+      </button>
+    </Router>
+  );
+}
 
-//     handleChange(){
+// when using hooks for localstorage
 
-//     }
-//     render(){
-//             return (
-//                 <>
-                
-//                 </>
-//             );
+// useEffect(() => {
+//   const json = JSON.stringify(tasks);
+//   localStorage.setItem("tasks", json);
+// }, [tasks]);
 
-//     }
-// }
+// loading from localStorage
 
-
-// export default App
-
-
-const arr = "string hello string"
-
-console.log(arr.slice());
+// useEffect(() => {
+//   const json = localStorage.getItem("tasks");
+//   const savedTasks = JSON.parse(json);
+//   if (savedTasks) {
+//     setNotes(savedTasks);
+//   }
+// }, []);

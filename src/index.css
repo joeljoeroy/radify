@@ -8,7 +8,7 @@
 
 .title {
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   font-family: "Oxygen";
   font-size: 28px;
   padding-left: 40px;
@@ -73,4 +73,14 @@
 .task:hover {
   box-shadow: 0px 1px 4px grey;
   border-radius: 10px;
+}
+
+.default-input {
+  font-size: 18px;
+  /* width: 200px; */
+  font-family: "Segoe UI";
+  margin: 0 50px 50px 0;
+  border: none transparent;
+  outline: none;
+  text-align: left;
 }
