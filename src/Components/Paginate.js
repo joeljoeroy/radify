@@ -32,7 +32,7 @@ export default function Paginate () {
         .map((task) => <View data = {{
         email: SavedTasks.email,
         date: SavedTasks.date,
-        task: task
+        task: task.task
     }}/>);
 
     const changePage = ({selected}) => {setPageNo(selected)};

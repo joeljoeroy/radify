@@ -15,13 +15,27 @@ toast.configure();
 class ToDo extends Component {
   constructor() {
     super();
+    const savedObject = JSON.parse(localStorage.getItem('saved')); 
+
+    if(!savedObject){
     this.state = {
       newItem: "",
       tasks: [],
       Title: "",
       email: "",
       date: null,
-    };
+      }
+    }else{ 
+      console.log(savedObject.email);
+      this.state = {  newItem: '', 
+                      tasks: [...savedObject.tasks], 
+                      Title: savedObject.title, 
+                      email: savedObject.email, 
+                      date: savedObject.date 
+                    }
+      console.log('state email:' + this.state.email);
+    } 
+  
     this.savedTasks = [];
 
     this.handleChange = this.handleChange.bind(this);
@@ -50,21 +64,25 @@ class ToDo extends Component {
 
   handleNew() {
     if (this.state.newItem) {
-      this.savedTasks.push(this.state.newItem.slice());
-      const saved = {
-        email: this.state.email,
-        date: this.state.date,
-        tasks: [...this.savedTasks],
-      };
-
-      const json = JSON.stringify(saved);
-      localStorage.setItem("saved", json);
-
+      console.log(this.state)
       const newItem = {
         id: Math.random() * 100 + 1,
         completed: false,
         task: this.state.newItem.slice(),
       };
+      // Saving Object to LocalStorage///////////////////////////////////////////
+
+      this.savedTasks.push(newItem);
+      const saved = {
+        title: this.state.Title,
+        email: this.state.email,
+        date: this.state.date,
+        tasks: [...this.savedTasks],
+      };
+      const json = JSON.stringify(saved);
+      console.log(json)
+      localStorage.setItem("saved", json);
+      ////////////////////////////////////////////////////////////////////////////
 
       const tasks = [...this.state.tasks];
       tasks.push(newItem);
@@ -153,7 +171,7 @@ class ToDo extends Component {
             className="default-input"
             placeholder="email@addr.com"
             size="20"
-            value={this.state.value}
+            value={this.state.email}
             onChange={(e) => this.newItem("email", e.target.value)}
             onBlur={(e) => {
               this.validate()
