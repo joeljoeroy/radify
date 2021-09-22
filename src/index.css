@@ -8,7 +8,7 @@
 
 .title {
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   font-family: "Oxygen";
   font-size: 28px;
   padding-left: 40px;
@@ -73,4 +73,65 @@
 .task:hover {
   box-shadow: 0px 1px 4px grey;
   border-radius: 10px;
+}
+
+.default-input {
+  font-size: 18px;
+  /* width: 200px; */
+  font-family: "Segoe UI";
+  margin: 0 50px 50px 0;
+  border: none transparent;
+  outline: none;
+  text-align: left;
+}
+
+/* Pagination styling */
+
+.user {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: cornsilk;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  height: 200px;
+  margin: 20px;
+}
+
+.containerView {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Pagination Styling */
+
+.paginationButton {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationButton a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+}
+
+.paginationButton a:hover {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: green;
 }

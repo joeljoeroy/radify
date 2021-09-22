@@ -1,8 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
-import ToDo from './Components/ToDo'
-// import App from './App'
+// import ToDo from './Components/ToDo'
+import App from "./App";
 
-
-ReactDOM.render(<ToDo />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
