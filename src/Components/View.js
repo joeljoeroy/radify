@@ -1,10 +1,10 @@
 import React from "react";
 
 const View = (props) => (
-  <div className="container">
-    <p style={{ fontSize: "20px" }}>{props.task}</p>
-    <p style={{ fontSize: "14px" }}>{props.email}</p>
-    <p style={{ fontSize: "14px" }}>{props.date}</p>
+  <div className="user">
+    <p style={{ fontSize: "20px" }}>{props.data.task}</p>
+    <p style={{ fontSize: "14px" }}>{props.data.email}</p>
+    <p style={{ fontSize: "14px" }}>{props.data.date}</p>
   </div>
 );
 

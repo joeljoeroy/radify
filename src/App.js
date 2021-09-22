@@ -10,6 +10,9 @@ export default function App() {
       <button>
         <Link to="/view">view All</Link>
       </button>
+       <button>
+        <Link to="/">Home</Link>
+      </button>
       <Route path='/' component={ToDo} exact />
       <Route path='/view' component={Paginate} />
     </Router>
@@ -29,7 +32,7 @@ export default function App() {
 // loading from localStorage
 
 // useEffect(() => {
-//   const json = localStorage.getItem("tasks");
+//   const json = localStorage.getItem("tasks");  
 //   const savedTasks = JSON.parse(json);
 //   if (savedTasks) {
 //     setNotes(savedTasks);

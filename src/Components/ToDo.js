@@ -36,13 +36,21 @@ class ToDo extends Component {
     });
   }
   validate() {
-    console.log("validate");
+
+    // const pattern=`[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$`
+    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email.slice())){
+    this.setState({ email: this.state.email.slice() });
+    }
+    else{
+      toast.error("Invalid Email",{
+      autoClose: 2000,
+      position: toast.POSITION.BOTTOM_CENTER});
+    }
   }
 
   handleNew() {
     if (this.state.newItem) {
       this.savedTasks.push(this.state.newItem.slice());
-      toast.success(`:${this.savedTasks}`);
       const saved = {
         email: this.state.email,
         date: this.state.date,
@@ -51,7 +59,6 @@ class ToDo extends Component {
 
       const json = JSON.stringify(saved);
       localStorage.setItem("saved", json);
-      toast.warning(`contents: ${json}`, { autoClose: 1000 });
 
       const newItem = {
         id: Math.random() * 100 + 1,
@@ -149,10 +156,8 @@ class ToDo extends Component {
             value={this.state.value}
             onChange={(e) => this.newItem("email", e.target.value)}
             onBlur={(e) => {
-              this.setState({ email: this.state.email.slice() });
-              this.validate();
+              this.validate()
             }}
-            // pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
 
           {/* Date input  */}
