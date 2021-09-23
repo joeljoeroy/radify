@@ -162,7 +162,8 @@ class ToDo extends Component {
               event.key === "Enter" &&
                 this.setState({ Title: this.state.Title.slice() });
             }}
-            // maxlength="10"
+            
+            required = 'true'
           />
           {/* Email input */}
 
@@ -211,7 +212,7 @@ class ToDo extends Component {
                 event.key === "Enter" && this.handleNew();
               }}
               autofocus="true"
-              //   maxlength="10"
+              maxlength="10"
             />
           </div>
 
